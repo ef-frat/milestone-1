@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/style/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <nav>
+        <ul class="sidebar">
+            <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30" fill="#464646"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#trips">TRIPS</a></li>
+            <li><a href="#gallery">GALLERY</a></li>
+            <li><a href="#">RATES</a></li>
+            <li><a href="#">SCHEDULE</a></li>
+        </ul>
+        <ul>
+            <li><a href="#">DAHAYU PHINISI</a></li>
+            <li class="hideOnMobile"><a href="#home">HOME</a></li>
+            <li class="hideOnMobile"><a href="#trips">TRIPS</a></li>
+            <li class="hideOnMobile"><a href="#gallery">GALLERY</a></li>
+            <li class="hideOnMobile"><a href="#">RATES</a></li>
+            <li class="hideOnMobile"><a href="#">SCHEDULE</a></li>
+            <li class="menu-button" onclick=showSidebar()><a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30" fill="#faebd7"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+            </a></li>
+        </ul>
+        </nav>
+    </header>
+
+    <script>
+        function showSidebar(){
+            const sidebar=document.querySelector('.sidebar')
+            sidebar.style.display = 'flex'
+        }
+        function hideSidebar(){
+            const sidebar=document.querySelector('.sidebar')
+            sidebar.style.display = 'none'
+        }
+    </script>
+
+<!-- Hero section -->
+    <section class="hero" id="home">
+            <h2>Let's start your SAILING journey !</h2>
+            <button onclick="window.location='#trips'">Here</button>
+    </section>
+
+<!-- Trips Section -->
+    <section class="trips" id="trips">
+        <div class="trip trip-left">
+            <h3>Private Trip</h3>
+        </div>
+        <div class="trip trip-right">
+            <h3>Open Trip</h3>
+        </div>
+    </section>
+
+<!-- Gallery Sections -->
+    <!-- <section class="gallery" id="gallery">
+        <h1>OUR GALLERY</h1>
+        <img src="/assets/main2.jpg" alt="image2">
+        <img src="/assets/main3.jpg" alt="image3">
+        <img src="/assets/main4.jpg" alt="image4">
+        <img src="/assets/Dahayu-L.JPG" alt="image5">
+        <img src="/assets/img-1.jpg" alt="image6">
+        <img src="/assets/img-2.jpg" alt="image7">
+        <img src="/assets/img-3.jpg" alt="image8">
+        <img src="/assets/img-4.jpg" alt="image9">
+        <img src="/assets/img-5.jpg" alt="image10">
+        <img src="/assets/img-6.jpg" alt="image11">
+        <img src="/assets/img-7.jpg" alt="image12">
+        <img src="/assets/img-8.jpg" alt="image13">
+        <img src="/assets/img-9.jpg" alt="image14">
+        <img src="/assets/img-10.jpg" alt="image15">
+        <img src="/assets/img-11.jpg" alt="image16">
+    </section> -->
+    
+    <h1>OUR GALLERY</h1>
+    <section class="container" id="gallery">
+        <div class="box"><img src="/assets/main2.jpg" alt="image2"></div>
+        <div class="box"><img src="/assets/main3.jpg" alt="image3"></div>
+        <div class="box"><img src="/assets/main4.jpg" alt="image4"></div>
+        <div class="box"><img src="/assets/Dahayu-L.JPG" alt="image5"></div>
+        <div class="box"><img src="/assets/img-1.jpg" alt="image6"></div>
+        <div class="box"><img src="/assets/img-2.jpg" alt="image7"></div>
+        <div class="box"><img src="/assets/img-3.jpg" alt="image8"></div>
+        <div class="box"><img src="/assets/img-4.jpg" alt="image9"></div>
+        <div class="box"><img src="/assets/img-5.jpg" alt="image10"></div>
+        <div class="box"><img src="/assets/img-6.jpg" alt="image11"></div>
+        <div class="box"><img src="/assets/img-7.jpg" alt="image12"></div>
+        <div class="box"><img src="/assets/img-8.jpg" alt="image13"></div>
+        <div class="box"><img src="/assets/img-9.jpg" alt="image14"></div>
+        <div class="box"><img src="/assets/img-10.jpg" alt="image15"></div>
+        <div class="box"><img src="/assets/img-11.jpg" alt="image16"></div>
+    </section>
+
+<!-- Rates Sections on progress -->
+
+<!-- Schedule Sections on progress -->
+
+<!-- Footer Sections  -->
+    <footer>
+        <p> Address | Phone | Email</p>
+        <p> © 2024 | Dahayu | All right reserved. </p>
+    </footer>
+
+</body>
+</html>

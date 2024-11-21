@@ -1,265 +1,93 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-}
 
 body {
-    min-height: 100vh;
-    font-family:'Gill Sans';
+    font-family: Aleo;
 }
 
-        /* HEADER + NAV */
-
-header {
-    position: sticky; 
-    top: 2px;
-    background-color: #464646;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-}
-
-nav ul {
-    width: auto;
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-nav li {
-    height: 70px;
-}
-
-nav a {
-    height: 100%;
-    padding: 0 20px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    color: #faebd7;
-}
-
-nav a:hover{
-    transition: 0.5s;
-    transform:scale(1.2);
-}
-
-nav li:first-child {
-    margin-right: auto;
-}
-
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 250px;
-    z-index: 999;
-    background-color: #ffffffda;
-    backdrop-filter: blur(10px);
-    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-
-.sidebar li {
-    width: 100%;
-}
-
-.sidebar a{
-    width: 100%;
-    color:#464646;
-}
-
-.sidebar a:hover{
-    color:black;
-    transition: 0.5s;
-    transform: scale(1.1s);
-}
-
-.menu-button {
-    display: none;
-}
-
-        /* HERO SECTION */
-
-.hero {
-    width: 100%;
-    height: 40vh;
-    background-image: url('/assets/hero1.jpg');
-    background-position: top;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero h2 {
-    font-family:'Gill Sans MT';
-    color: #ffc881;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px #242424;
-}
-
-.hero button {
-    padding: 8px 20px;
-    font-family: 'Gill Sans';
-    font-size: 1rem;
-    background-color: #464646;
-    color:#ffc881;
-    cursor: pointer;
-    border-radius: 8px;
-}
-
-.hero button:hover {
-    font-size: 1.1rem;
-    background-color: #ffc881;
-    color: #464646;
-    transition: 0.3s;
-}
-
-        /* TRIPS SECTION */
-
-.trips {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 40px 20px;
-}        
-
-.trip {
-    flex: 1;
-    min-width: 250px;
-    height: 300px;
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    color:#fffbfb;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-    margin: 10px;
-    font-family: 'Gill Sans MT';
-    font-size: 1.5rem;
-    background-blend-mode: overlay;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.trips h3:hover {
-    cursor: pointer;
-    font-size: 2.5rem;
-    transition: 0.5s;
-}
-
-.trip-left {
-    background-image: url('/assets/Dahayu-L.JPG');
-    z-index: -1;
-}
-
-.trip-right {
-    background-image: url('/assets/Dahayu-RJPG.JPG');
-    z-index: -1;
-}
-
-        /* GALLERY SECTION */
-/* .gallery {
-    font-family: 'Gill Sans MT';
-    font-size: 1.1rem;
-    background-color: #464646;
-    color:#faebd7;
-    padding: 30px 80px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap:12px;
-}
-.gallery img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover no-repeat;
-} */
-
-h1 {
-    font-family: 'Gill Sans MT';
-    font-size: 2.5rem;
-    color: #464646;
-    position: bottom;
-padding-left: 30px;
-}
-.container {
-    background-color: #464646;
-    width: auto;
-    margin: 20px auto;
-    columns: 4;
-    column-gap: 20px;
-    padding: 25px;
-}
-
-.container .box {
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.container .box img {
-    max-width: 100%;
-    border-radius: 10px;
-}
-
-@media (max-width: 1200px){
-    .container {
-        width: calc(100% - 40px);
-        columns: 3;
+/* Animation for Logo & Footer - changing color */
+@keyframes gradientSweep {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
     }
 }
 
-@media (max-width: 768px){
-    .container {
-        columns: 2;
-    }
+.animated-logo {
+    font-family: 'Aleo', serif;
+    background: linear-gradient(90deg, #00acb9, #636363, #00acb9);
+    background-size: 800%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientSweep 10s linear infinite;
 }
 
-@media (max-width: 480px){
-    .container {
-        columns: 1;
-    }
-}
-
-
-        /* FOOTER SECTION */
 footer {
-    width: auto;
-    height: 100px;
-    padding: 20px 20px;
-    margin: 0;
-    background-color: #fffdfd;
-    color: #464646;
-    text-align: right;
+    font-family: 'Aleo', serif;
+    background: linear-gradient(90deg, #00acb9, #636363, #00acb9);
+    background-size: 1000%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientSweep 12s linear infinite;
 }
 
-/* Image Animation */
+/* HERO SECTION - Add a blinking cursor */
+#typewriter::after {
+    content: '|';
+    display: inline-block;
+    animation: blink 1s step-end infinite;
+}
 
-img:hover {
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* ABOUT SECTION - Carousel Container */
+.carousel-about {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+    /* Carousel Images Wrapper */
+.carousel-images {
+    display: flex;
+    width: 100%;
+    transform: translateX(0%);
+    transition: transform 2s ease;
+}
+
+    /* Individual Image */
+.carousel-about img {
+    flex: 1 0 100%;
+    height: auto;
+}
+
+/* TRIPS SECTION - hover effect */
+#Trips .bg-white h3 {
+    transition: color 0.5s ease-in-out, transform 0.4s ease-in-out;
+  }
+  
+  #Trips .bg-white:hover h3 {
+    color: #02D8E9;
+    transform: scale(1.5);
+  }
+  
+/* Hover animation for gallery images */
+#gallery img {
+    transition: transform 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  #gallery img:hover {
     transform: scale(1.2);
-    transition: 1s;
-    border-radius: 20px;
-}
-
-@media (max-width:800px) {
-    .hideOnMobile {
-        display: none;
-    }
-    .menu-button {
-        display:block;
-    }
-}
-
-@media (max-width: 400px) {
-    .sidebar {
-        width: 100%;
-    }
-}
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  

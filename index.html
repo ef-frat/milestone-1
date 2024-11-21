@@ -6,111 +6,253 @@
     <title>Dahayu Phinisi</title>
     <meta name="description" content="A sailing getaway to Komodo National Park.">
     <meta name="author" content="Dahayu Phinisi">
+    <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        aqua: '#02D8E9',
+                        darkGray: '#434343',
+                        lightGray: '#777777',
+                    },
+                },
+            },
+        };
+    </script>
     <link rel="stylesheet" href="./assets/style/style.css">
 </head>
 
-<body>
+<body class="bg-white text-darkGray">
 
-    <!-- HEADER -->
-    <header>
-        <nav>
-        <ul class="sidebar">
-            <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30" fill="#464646"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#trips">TRIPS</a></li>
-            <li><a href="#gallery">GALLERY</a></li>
-            <li><a href="#">RATES</a></li>
-            <li><a href="#">SCHEDULE</a></li>
-        </ul>
-        <ul>
-            <li><a href="#">DAHAYU PHINISI</a></li>
-            <li class="hideOnMobile"><a href="#home">HOME</a></li>
-            <li class="hideOnMobile"><a href="#trips">TRIPS</a></li>
-            <li class="hideOnMobile"><a href="#gallery">GALLERY</a></li>
-            <li class="hideOnMobile"><a href="#">RATES</a></li>
-            <li class="hideOnMobile"><a href="#">SCHEDULE</a></li>
-            <li class="menu-button" onclick=showSidebar()><a href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30" fill="#faebd7"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
-            </a></li>
-        </ul>
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md font-family:Aleo">
+        <div class="max-w-7xl mx-auto flex justify-between items-center p-4 md:p-6">
+            <!-- Logo -->
+            <h1 class="text-2xl font-bold animated-logo">Dahayu Phinisi</h1>
+            <!-- Nav Links (hidden on mobile) -->
+            <nav class="hidden md:flex space-x-6 text-lg">
+                <a href="#home" class="hover:text-aqua">Home</a>
+                <a href="#about" class="hover:text-aqua">About</a>
+                <a href="#Trips" class="hover:text-aqua">Trips</a>
+                <a href="#destinations" class="hover:text-aqua">Destinations</a>
+                <a href="#contact" class="hover:text-aqua">Contact</a>
+            </nav>
+            <!-- Hamburger Menu (visible on mobile) -->
+            <button id="menu-btn" class="block md:hidden focus:outline-none">
+                <svg class="w-8 h-8 text-darkGray" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <nav id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-md">
+            <ul class="flex flex-col items-center space-y-4 p-4">
+                <li><a href="#home" class="block text-lg hover:text-aqua">Home</a></li>
+                <li><a href="#about" class="block text-lg hover:text-aqua">About</a></li>
+                <li><a href="#Trips" class="block text-lg hover:text-aqua">Trips</a></li>
+                <li><a href="#destinations" class="block text-lg hover:text-aqua">Destinations</a></li>
+                <li><a href="#contact" class="block text-lg hover:text-aqua">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
-    <script>
-        function showSidebar(){
-            const sidebar=document.querySelector('.sidebar')
-            sidebar.style.display = 'flex'
-        }
-        function hideSidebar(){
-            const sidebar=document.querySelector('.sidebar')
-            sidebar.style.display = 'none'
-        }
-    </script>
-
-<!-- Hero section -->
-    <section class="hero" id="home">
-            <h2>Let's start your SAILING journey !</h2>
-            <button onclick="window.location='#trips'">Here</button>
-    </section>
-
-<!-- Trips Section -->
-    <section class="trips" id="trips">
-        <div class="trip trip-left">
-            <h3>Private Trip</h3>
-        </div>
-        <div class="trip trip-right">
-            <h3>Open Trip</h3>
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-cover bg-center h-screen" style="background-image: url('./assets/pics/hero-1.jpg');">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="relative z-10 flex flex-col justify-center items-center text-center h-full text-white">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                <span id="typewriter"> Ready, Sail, Go! </span>
+            </h1>
+            <p class="text-lg md:text-xl mb-6">Explore Komodo's untouched waters aboard our Dahayu Phinisi.</p>
+            <div class="space-x-4">
+                <a href="#contact" class="bg-aqua text-white px-6 py-3 rounded-lg hover:bg-opacity-80">Book Your Voyage</a>
+                <a href="#Trips" class="bg-white text-aqua px-6 py-3 rounded-lg hover:bg-aqua hover:text-white">Explore Our Trips</a>
+            </div>
         </div>
     </section>
 
-<!-- Gallery Sections -->
-    <!-- <section class="gallery" id="gallery">
-        <h1>OUR GALLERY</h1>
-        <img src="/assets/main2.jpg" alt="image2">
-        <img src="/assets/main3.jpg" alt="image3">
-        <img src="/assets/main4.jpg" alt="image4">
-        <img src="/assets/Dahayu-L.JPG" alt="image5">
-        <img src="/assets/img-1.jpg" alt="image6">
-        <img src="/assets/img-2.jpg" alt="image7">
-        <img src="/assets/img-3.jpg" alt="image8">
-        <img src="/assets/img-4.jpg" alt="image9">
-        <img src="/assets/img-5.jpg" alt="image10">
-        <img src="/assets/img-6.jpg" alt="image11">
-        <img src="/assets/img-7.jpg" alt="image12">
-        <img src="/assets/img-8.jpg" alt="image13">
-        <img src="/assets/img-9.jpg" alt="image14">
-        <img src="/assets/img-10.jpg" alt="image15">
-        <img src="/assets/img-11.jpg" alt="image16">
-    </section> -->
-    
-    <h1>OUR GALLERY</h1>
-    <section class="container" id="gallery">
-        <div class="box"><img src="/assets/main2.jpg" alt="image2"></div>
-        <div class="box"><img src="/assets/main3.jpg" alt="image3"></div>
-        <div class="box"><img src="/assets/main4.jpg" alt="image4"></div>
-        <div class="box"><img src="/assets/Dahayu-L.JPG" alt="image5"></div>
-        <div class="box"><img src="/assets/img-1.jpg" alt="image6"></div>
-        <div class="box"><img src="/assets/img-2.jpg" alt="image7"></div>
-        <div class="box"><img src="/assets/img-3.jpg" alt="image8"></div>
-        <div class="box"><img src="/assets/img-4.jpg" alt="image9"></div>
-        <div class="box"><img src="/assets/img-5.jpg" alt="image10"></div>
-        <div class="box"><img src="/assets/img-6.jpg" alt="image11"></div>
-        <div class="box"><img src="/assets/img-7.jpg" alt="image12"></div>
-        <div class="box"><img src="/assets/img-8.jpg" alt="image13"></div>
-        <div class="box"><img src="/assets/img-9.jpg" alt="image14"></div>
-        <div class="box"><img src="/assets/img-10.jpg" alt="image15"></div>
-        <div class="box"><img src="/assets/img-11.jpg" alt="image16"></div>
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-4">About Dahayu</h2>
+                    <p class="text-lg">Discover the beauty of Komodo National Park with Dahayu Phinisi. 
+                        Built with care, Dahayu offers a luxurious sailing experience for adventurers and nature lovers alike.</p>
+                </div>
+               
+                <div class="carousel-about relative overflow-hidden shadow-md">
+                <div class="carousel-images flex transition-transform duration-400">
+                    <img src="./assets/pics/About.jpg" alt="Dahayu 1" class="shadow-md">
+                    <img src="./assets/pics/About-1.jpg" alt="Dahayu 1" class="shadow-md">
+                    <img src="./assets/pics/About-2.jpg" alt="Dahayu 1" class="shadow-md">
+                    <img src="./assets/pics/About-3.jpg" alt="Dahayu 1" class="shadow-md">
+                    <img src="./assets/pics/About-4.jpg" alt="Dahayu 1" class="shadow-md">
+                </div>
+            </div>
+            </div>
+        </div>
     </section>
 
-<!-- Rates Sections on progress -->
+    <!-- Trips Section -->
+    <section id="Trips" class="py-16 bg-darkGray">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 text-center">
+            <h2 class="text-aqua text-3xl font-bold mb-6">Which trip suits you?</h2>
+            <div class="grid md:grid-cols-2 gap-8"> 
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <img src="./assets/pics/private-trip.jpg" alt="Trip 1" class="rounded-lg mb-4">
+                    <h3 class="text-xl font-bold mb-2">Private Trip</h3>
+                    <p>Experience the highlights of Komodo National Park with your closest ones.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <img src="./assets/pics/open-trip.jpg" alt="Trip 2" class="rounded-lg mb-4">
+                    <h3 class="text-xl font-bold mb-2">Open Trip</h3>
+                    <p>Embark a new adventure with new friends!</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Schedule Sections on progress -->
+    <!-- Destinations Section -->
+<section id="destinations" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 text-center">
+        <h2 class="text-3xl font-bold mb-6">Destinations</h2>
+        <p class="mb-8 text-lg">Discover the iconic landmarks and hidden gems of Komodo National Park.</p>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="relative group">
+                <img src="./assets/pics/padar-1.jpg" alt="Padar Island" class="rounded-lg shadow-md">
+                <div class="absolute inset-0 bg-aqua bg-opacity-85 flex justify-center items-center opacity-0 group-hover:opacity-100 transition rounded-lg shadow-md">
+                    <p class="text-white font-bold text-2xl">Padar Island</p>
+                </div>
+            </div>
+            <div class="relative group">
+                <img src="./assets/pics/pink-beach.jpg" alt="Pink Beach" class="rounded-lg shadow-md">
+                <div class="absolute inset-0 bg-aqua bg-opacity-85 flex justify-center items-center opacity-0 group-hover:opacity-100 transition rounded-lg shadow-md">
+                    <p class="text-white font-bold text-2xl">Pink Beach</p>
+                </div>
+            </div>
+            <div class="relative group">
+                <img src="./assets/pics/manta.jpg" alt="Manta Point" class="rounded-lg shadow-md">
+                <div class="absolute inset-0 bg-aqua bg-opacity-85 flex justify-center items-center opacity-0 group-hover:opacity-100 transition rounded-lg shadow-md">
+                    <p class="text-white font-bold text-2xl">Manta Point</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-<!-- Footer Sections  -->
-    <footer>
-        <p> Address | Phone | Email</p>
-        <p> © 2024 | Dahayu | All right reserved. </p>
+<!-- Gallery Section -->
+<section id="gallery" class="py-16 bg-darkGray">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 text-center">
+        <h2 class="text-aqua text-3xl font-bold mb-6">Gallery</h2>
+        <p class="mb-8 text-white text-lg">A glimpse into the beauty and breathtaking view during our sailing trip.</p>
+        <div class="grid md:grid-cols-4 gap-4">
+            <img src="./assets/pics/img-a.jpg" alt="Gallery Image 1" class="rounded-lg shadow-md">
+            <img src="./assets/pics/img-b.jpg" alt="Gallery Image 2" class="rounded-lg shadow-md">
+            <img src="./assets/pics/img-c.jpg" alt="Gallery Image 3" class="rounded-lg shadow-md">
+            <img src="./assets/pics/img-d.jpg" alt="Gallery Image 4" class="rounded-lg shadow-md">
+            <img src="./assets/pics/img-e.jpg" alt="Gallery Image 5" class="rounded-lg shadow-md">
+            <img src="./assets/pics/img-f.jpg" alt="Gallery Image 6" class="rounded-lg shadow-md">
+            <img src="./assets/pics/img-g.jpg" alt="Gallery Image 7" class="rounded-lg shadow-md">
+            <img src="./assets/pics/img-h.jpg" alt="Gallery Image 8" class="rounded-lg shadow-md">
+            <img src="./assets/pics/img-i.jpg" alt="Gallery Image 9" class="rounded-lg shadow-md">
+            <img src="./assets/pics/img-j.jpg" alt="Gallery Image 10" class="rounded-lg shadow-md">
+            <img src="./assets/pics/img-k.jpg" alt="Gallery Image 11" class="rounded-lg shadow-md">
+            <img src="./assets/pics/img-l.jpg" alt="Gallery Image 12" class="rounded-lg shadow-md">
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 text-center">
+        <h2 class="text-3xl font-bold mb-6">Why Us ?</h2>
+        <p class="mb-8 text-lg">Hear from our happy travelers who embarked on the Dahayu journey.</p>
+        
+        <!-- Carousel Container -->
+        <div class="relative overflow-hidden">
+            <!-- Slides -->
+            <div id="testimonial-carousel" class="flex transition-transform duration-700 ease-in-out">
+                <!-- Testimonial 1 -->
+                <div class="min-w-full p-6">
+                    <blockquote class="text-lg italic text-gray-700">"The experience on Dahayu was beyond expectations! The crew was amazing, and the destinations were breathtaking. Can't wait to come back!"</blockquote>
+                    <p class="mt-4 font-bold text-aqua">- Sarah L.</p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="min-w-full p-6">
+                    <blockquote class="text-lg italic text-gray-700">"This was the most luxurious trip we've ever had. The food, the views, and the personalized service made it unforgettable!"</blockquote>
+                    <p class="mt-4 font-bold text-aqua">- James & Emily</p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="min-w-full p-6">
+                    <blockquote class="text-lg italic text-gray-700">"Sailing through Komodo National Park on Dahayu was magical. Highly recommend this to anyone looking for adventure and relaxation!"</blockquote>
+                    <p class="mt-4 font-bold text-aqua">- Alex W.</p>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <button id="prev-btn" class="absolute top-1/2 left-4 -translate-y-1/2 bg-aqua text-white w-8 h-8 flex justify-center items-center rounded-full shadow-md focus:outline-none">
+                &#10094;
+            </button>
+            <button id="next-btn" class="absolute top-1/2 right-4 -translate-y-1/2 bg-aqua text-white w-8 h-8 flex justify-center items-center rounded-full shadow-md focus:outline-none">
+                &#10095;
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Us Section -->
+<section id="contact" class="py-16 bg-darkGray text-white">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <h2 class="text-aqua text-3xl font-bold text-center mb-8">Contact Us</h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <!-- Contact Form -->
+            <div>
+                <form action="#" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-lg font-bold mb-2">Name</label>
+                        <input type="text" id="name" name="name" required class="w-full border rounded-lg p-3 focus:outline-none focus:ring focus:ring-aqua text-darkGray">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-lg font-bold mb-2">Email</label>
+                        <input type="email" id="email" name="email" required class="w-full border rounded-lg p-3 focus:outline-none focus:ring focus:ring-aqua text-darkGray">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-lg font-bold mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" required class="w-full border rounded-lg p-3 focus:outline-none focus:ring focus:ring-aqua text-darkGray"></textarea>
+                    </div>
+                    <button type="submit" class="bg-aqua text-white px-6 py-3 rounded-lg hover:bg-opacity-80">Send Message</button>
+                </form>
+            </div>
+            <!-- Social Media Links -->
+            <div class="flex flex-col items-center space-y-8">
+                <a href="https://www.instagram.com" target="_blank" class="text-aqua hover:underline flex flex justify-start items-center w-full max-w-[200px]">
+                    <img src="./assets/pics/instagram.svg" alt="Instagram" class="w-8 h-8 inline-block mr-2"> Instagram
+                </a>
+                <a href="https://wa.me/1234567890" target="_blank" class="text-aqua hover:underline flex flex justify-start items-center w-full max-w-[200px]">
+                    <img src="./assets/pics/whatsapp.svg" alt="WhatsApp" class="w-8 h-8 inline-block mr-2"> WhatsApp
+                </a>
+                <a href="https://www.tiktok.com" target="_blank" class="text-aqua hover:underline flex flex justify-start items-center w-full max-w-[200px]">
+                    <img src="./assets/pics/tiktok.svg" alt="TikTok" class="w-8 h-8 inline-block mr-2"> TikTok
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="bg-darkGray text-aqua py-8">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 text-right">
+            <p>&copy; 2024 | Dahayu Phinisi | All rights reserved.</p>
+        </div>
     </footer>
+
+<!-- Link to JavaScript file -->
+<script src="script.js"></script>
 
 </body>
 </html>

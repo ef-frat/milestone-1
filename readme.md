@@ -16,7 +16,7 @@ This guide explains how to deploy my website, set it up on Netlify, and configur
 1. After selecting the repository,
 2. Click **Deploy site**. Netlify will provide a temporary URL.
 
-![image](./assets/doc/SS-6.png)
+![image](./assets/docss/SS-6.png)
 
 ---
 
@@ -32,7 +32,7 @@ This guide explains how to deploy my website, set it up on Netlify, and configur
 1. Go to **Domain** > **Manage Domain** for `dahayu.site`.
 2. Navigate to the **DNS/Nameserver** section.
 
-![image](./assets/doc/SS-14.png)
+![image](./assets/docs/SS-14.png)
 
 ### Step 3: Connect to Netlify
 
@@ -41,11 +41,11 @@ This guide explains how to deploy my website, set it up on Netlify, and configur
 3. Netlify will prompt you to update your DNS settings on Niagahoster.
 4. Once it's done, click **Options** and choose **Go To DNS Panel**.
 
-![image](./assets/doc/SS-12.png)
+![image](./assets/docs/SS-12.png)
 
 5. It will shows something like this:
 
-![image](./assets/doc/SS-13.png)
+![image](./assets/docs/SS-13.png)
 
 ### Step 4: Set DNS Records on Niagahoster
 
@@ -53,13 +53,13 @@ This guide explains how to deploy my website, set it up on Netlify, and configur
 
 2. Copy all that information and paste it to this part at Niagahoster web:
 
-![image](./assets/doc/SS-14.png)
+![image](./assets/docs/SS-14.png)
 
 3. Save the changes and wait until it finish.
 
 ### Once it finish, you will notice the website's URL has changed:
 
-![image](./assets/doc/SS-15.png)
+![image](./assets/docs/SS-15.png)
 
 ---
 
